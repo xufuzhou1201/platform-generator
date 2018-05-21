@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AutoCode</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!--bootstrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--jqgrid-->
+    <link rel="stylesheet" href="plugins/jqgrid/ui.jqgrid-bootstrap.css">
+    <link rel="stylesheet" href="plugins/ztree/css/metroStyle/metroStyle.css">
+    <!--main-->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/iview.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--jquery-->
+    <script src="libs/jquery.min.js"></script>
+    <!--layer-->
+    <script src="plugins/layer/layer.js"></script>
+    <!--bootstrap-->
+    <script src="libs/bootstrap.min.js"></script>
+    <!--vue-->
+    <script src="libs/vue.min.js"></script>
+    <script src="libs/iview.min.js"></script>
+    <!--jqgrid-->
+    <script src="plugins/jqgrid/grid.locale-cn.js"></script>
+    <script src="plugins/jqgrid/jquery.jqGrid.min.js"></script>
+    <script src="libs/content.js"></script>
+    <script src="libs/jquery-extend.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+<div id="rrapp">
+    <Row :gutter="16">
+        <div class="search-group">
+            <i-col span="4">
+                <i-input v-model="q.tableName" @on-enter="query" placeholder="表名"/>
+            </i-col>
+            <i-button @click="query">查询</i-button>
+            <i-button @click="reloadSearch">重置</i-button>
+        </div>
+        <div class="buttons-group">
+            <i-button type="primary" @click="generator"><i class="fa fa-file-code-o"></i>&nbsp;生成代码</i-button>
+        </div>
+    </Row>
+    <table id="jqGrid"></table>
+</div>
+
+<script src="js/generator.js"></script>
+</body>
+</html>
